@@ -18,9 +18,9 @@
         <div class="container">
 
             <td>
-            <a class="text-light" href="/">
-             <h3> Bookers </h3>
-            </a>
+               <a class="navbar-brand" href="/">
+                Bookers 
+               </a>
           </td>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -34,7 +34,7 @@
 
       <% if user_signed_in? %>
         <li>
-          <%= link_to root_path, class: 'nav-link text-light' do %>
+          <%= link_to user_path(current_user), class: 'nav-link text-light' do %>
             <i class="fas fa-home"></i>
               Home
           <% end %>
@@ -71,7 +71,7 @@
         </li>
 
         <li>
-          <%= link_to  about_path, class: 'nav-link text-light' do %>
+          <%= link_to about_path, class: 'nav-link text-light' do %>
             <i class="fas fa-link"></i>
               About
           <% end %>
@@ -95,6 +95,12 @@
         </ul>
       </div>
     </header>
+<div>
+  <%= flash[:notice] %>
+</div>
+<div>
+  <%= flash[:alret] %>
+</div>
     <%= yield %>
 
     <footer>
